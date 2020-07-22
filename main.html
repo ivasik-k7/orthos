@@ -7,68 +7,415 @@
         <link rel="stylesheet" href="css/bundle.css" />
     </head>
     <body>
-        <div class="admin-panel">
-            <div class="container">
-                <div class="admin-panel__inner">
-                    <div class="sidebar-menu">
-                        <div class="sidebar-menu_logo">
-                            <a href="main.html">
-                                <img src="assets/img/new.svg" alt="brand-logo" />
-                            </a>
-                        </div>
-                        <div class="sidebar-menu_profile">
-                            <div class="profile-block">
-                                <img
-                                    src="data:image/jpeg;base64,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"
-                                    alt="denthal avatar"
-                                />
-                            </div>
-                            <h4 class="profile-name">Name Name</h4>
-                            <span>Job job</span>
-                        </div>
-                        <nav class="sidebar-menu_nav">
-                            <ul>
-                                <li class="active-rep">
-                                    <a href="#"> <span></span><span>Клієнти</span> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <span></span><span>Новини</span> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <span></span><span>Питання/Відповіді</span> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <span></span><span>Задати питання</span> </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <a href="index.html" class="sidebar-menu_logout">
-                            <div>
-                                <span class="logout-icon"></span>
-                                <span>Вийти</span>
-                            </div>
+        <div class="admin-panel position-relative">
+            <div class="admin-panel__inner">
+                <div class="sidebar-menu">
+                    <div class="sidebar-menu_logo">
+                        <a href="main.html">
+                            <img src="assets/img/new.svg" alt="brand-logo" />
                         </a>
                     </div>
-                    <div class="sidebar-content">
-                        <div class="content-top">
-                            <form class="form-search">
-                                <input type="text" placeholder="Пошук" />
-                                <button type="submit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                        <path
-                                            d="M17.704 16.285l-3.399-3.39c1.097-1.396 1.692-3.121 1.69-4.898C15.995 3.581 12.415 0 7.997 0 3.581 0 0 3.58 0 7.997s3.58 7.998 7.997 7.998c1.777.002 3.502-.593 4.899-1.69l3.389 3.4c.187.189.443.295.71.295.266 0 .522-.106.71-.296.189-.187.295-.443.295-.71 0-.266-.106-.522-.296-.71zM2 7.997C2 4.685 4.685 2 7.997 2c3.313 0 5.998 2.686 5.998 5.998 0 3.313-2.685 5.998-5.998 5.998C4.685 13.995 2 11.31 2 7.997z"
-                                        />
-                                    </svg>
-                                </button>
-                            </form>
-
-                            <div class="button-container-2">
-                                <span class="mas">+ Додати клієнта</span>
-                                <button type="button" name="Hover">+ Додати клієнта</button>
-                            </div>
+                    <div class="sidebar-menu_profile">
+                        <div class="profile-block">
+                            <img
+                                src="data:image/jpeg;base64,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"
+                                alt="denthal avatar"
+                            />
                         </div>
-                        <div class="content-list"></div>
+                        <h4 class="profile-name">Name Name</h4>
+                        <span>Job job</span>
                     </div>
+                    <nav class="sidebar-menu_nav">
+                        <ul>
+                            <li class="active-rep">
+                                <a href="#">
+                                    <svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <path
+                                                d="m256 207c47.972 0 87-39.028 87-87s-39.028-87-87-87-87 39.028-87 87 39.028 87 87 87zm0-144c31.43 0 57 25.57 57 57s-25.57 57-57 57-57-25.57-57-57 25.57-57 57-57z"
+                                            />
+                                            <path
+                                                d="m432 207c30.327 0 55-24.673 55-55s-24.673-55-55-55-55 24.673-55 55 24.673 55 55 55zm0-80c13.785 0 25 11.215 25 25s-11.215 25-25 25-25-11.215-25-25 11.215-25 25-25z"
+                                            />
+                                            <path
+                                                d="m444.1 241h-23.2c-27.339 0-50.939 16.152-61.693 39.352-22.141-24.17-53.944-39.352-89.228-39.352h-27.957c-35.284 0-67.087 15.182-89.228 39.352-10.755-23.2-34.355-39.352-61.694-39.352h-23.2c-37.44 0-67.9 30.276-67.9 67.49v109.21c0 16.156 13.194 29.3 29.412 29.3h91.727c1.538 17.9 16.59 32 34.883 32h199.957c18.292 0 33.344-14.1 34.883-32h90.679c16.796 0 30.46-13.61 30.46-30.34v-108.17c-.001-37.214-30.461-67.49-67.901-67.49zm-414.1 67.49c0-20.672 17.002-37.49 37.9-37.49h23.2c20.898 0 37.9 16.818 37.9 37.49v10.271c-10.087 26.264-8 42.004-8 98.239h-91zm331 135.489c0 2.769-2.252 5.021-5.021 5.021h-199.958c-2.769 0-5.021-2.253-5.021-5.021v-81.957c0-50.19 40.832-91.022 91.021-91.022h27.957c50.19 0 91.022 40.832 91.022 91.021zm121-27.319c0 .517 5.592.34-91 .34 0-56.651 2.071-72.018-8-98.239v-10.271c0-20.672 17.002-37.49 37.9-37.49h23.2c20.898 0 37.9 16.818 37.9 37.49z"
+                                            />
+                                            <path
+                                                d="m80 207c30.327 0 55-24.673 55-55s-24.673-55-55-55-55 24.673-55 55 24.673 55 55 55zm0-80c13.785 0 25 11.215 25 25s-11.215 25-25 25-25-11.215-25-25 11.215-25 25-25z"
+                                            />
+                                        </g>
+                                    </svg>
+
+                                    <span>Клієнти</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <path
+                                                d="m446.605 124.392-119.997-119.997c-2.801-2.802-6.624-4.395-10.608-4.395h-210c-24.813 0-45 20.187-45 45v422c0 24.813 20.187 45 45 45h300c24.813 0 45-20.187 45-45v-332c0-4.09-1.717-7.931-4.395-10.608zm-115.605-73.179 68.787 68.787h-53.787c-8.271 0-15-6.729-15-15zm75 430.787h-300c-8.271 0-15-6.729-15-15v-422c0-8.271 6.729-15 15-15h195v75c0 24.813 20.187 45 45 45h75v317c0 8.271-6.729 15-15 15z"
+                                            />
+                                            <path d="m346 212h-180c-8.284 0-15 6.716-15 15s6.716 15 15 15h180c8.284 0 15-6.716 15-15s-6.716-15-15-15z" />
+                                            <path d="m346 272h-180c-8.284 0-15 6.716-15 15s6.716 15 15 15h180c8.284 0 15-6.716 15-15s-6.716-15-15-15z" />
+                                            <path d="m346 332h-180c-8.284 0-15 6.716-15 15s6.716 15 15 15h180c8.284 0 15-6.716 15-15s-6.716-15-15-15z" />
+                                            <path d="m286 392h-120c-8.284 0-15 6.716-15 15s6.716 15 15 15h120c8.284 0 15-6.716 15-15s-6.716-15-15-15z" />
+                                        </g>
+                                    </svg>
+                                    <span>Новини</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <path
+                                                d="m378 73h-19v-17c0-8.284-6.716-15-15-15h-35.032c-6.354-22.948-27.366-41-52.968-41-25.558 0-46.604 18.016-52.968 41h-35.032c-8.284 0-15 6.716-15 15v17h-19c-24.813 0-45 20.187-45 45v349c0 24.813 20.187 45 45 45h244c24.813 0 45-20.187 45-45v-349c0-24.813-20.187-45-45-45zm-195-2h33c8.284 0 15-6.716 15-15 0-14.094 11.449-26 25-26s25 11.906 25 26c0 8.284 6.716 15 15 15h33v42h-146zm210 396c0 8.271-6.729 15-15 15h-244c-8.271 0-15-6.729-15-15v-349c0-8.271 6.729-15 15-15h19v25c0 8.284 6.716 15 15 15h176c8.284 0 15-6.716 15-15v-25h19c8.271 0 15 6.729 15 15z"
+                                            />
+                                            <path d="m176.33 371.53c-7.664-5.054-17.593-2.152-21.55 5.409-5.888 11.027 3.511 24.136 16.15 21.771 13.423-2.813 16.212-20.066 5.4-27.18z" />
+                                            <path d="m344 369h-112c-8.284 0-15 6.716-15 15s6.716 15 15 15h112c8.284 0 15-6.716 15-15s-6.716-15-15-15z" />
+                                            <path
+                                                d="m182.71 317.069c-1.833-8.78-10.559-13.948-19.07-11.42-8.681 2.838-12.181 11.364-9.99 18.71 2.848 8.739 11.506 12.19 18.7 9.99 7.661-2.434 11.764-9.77 10.36-17.28z"
+                                            />
+                                            <path d="m344 305h-112c-8.284 0-15 6.716-15 15s6.716 15 15 15h112c8.284 0 15-6.716 15-15s-6.716-15-15-15z" />
+                                            <path
+                                                d="m182.71 253.069c-1.876-8.987-10.824-13.92-19.06-11.42-8.583 2.745-12.238 11.354-10 18.7 2.735 8.569 11.358 12.244 18.7 10 7.664-2.435 11.763-9.775 10.36-17.28z"
+                                            />
+                                            <path d="m232 271h112c8.284 0 15-6.716 15-15s-6.716-15-15-15h-112c-8.284 0-15 6.716-15 15s6.716 15 15 15z" />
+                                        </g>
+                                    </svg>
+                                    <span>Питання/Відповіді</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <path
+                                                d="m510.252 490.007-45.022-86.515c30.355-42.853 46.712-93.934 46.712-147.524 0-141.469-114.477-255.955-255.955-255.955-141.47-.001-255.957 114.477-255.957 255.955 0 49.991 14.308 98.113 41.463 139.696l-40.283 95.433c-5.175 12.272 7.165 24.89 19.647 19.647l95.433-40.283c87.646 57.236 202.092 55.052 287.22-5.249l86.515 45.022c12.983 6.757 26.957-7.302 20.227-20.227zm-383.694-48.811c-4.293-3.019-9.791-3.518-14.437-1.53l-68.928 29.095 29.095-68.928c2.01-4.759 1.43-10.208-1.53-14.438-26.645-38.053-40.733-82.815-40.733-129.427 0-124.598 101.362-225.961 225.961-225.961 175.541 0 284.394 192.832 193.306 342.87l-16.687-32.064c62.547-129.976-32.828-280.811-176.619-280.811-108.051 0-195.966 87.905-195.966 195.966 0 143.669 150.71 239.226 280.811 176.619l32.064 16.687c-75.821 46.031-172.64 43.525-246.337-8.078zm221.292-38.774c-4.417-2.289-9.647-2.239-13.988.07-109.841 58.653-243.847-21.359-243.847-146.524 0-91.514 74.457-165.971 165.971-165.971 125.238 0 205.136 134.084 146.525 243.848-2.33 4.359-2.35 9.598-.07 13.987 53.912 103.579 11.795 22.663 59.25 113.84-89.219-46.435-11.172-5.811-113.841-59.25z"
+                                            />
+                                            <circle cx="255.986" cy="370.362" r="18.083" />
+                                            <path
+                                                d="m258.288 122.491h-4.604c-44.832 0-81.306 36.474-81.306 81.306 0 8.283 6.715 14.997 14.997 14.997 8.283 0 14.997-6.715 14.997-14.997 0-28.293 23.018-51.311 51.311-51.311h4.604c28.293 0 51.31 23.018 51.31 51.311 0 26.462-20.402 51.31-53.613 51.31-8.283 0-14.997 6.715-14.997 14.997v32.174c0 8.283 6.715 14.997 14.997 14.997s14.997-6.715 14.997-14.997v-18.167c38.823-6.113 68.61-39.802 68.61-80.315.002-44.831-36.471-81.305-81.303-81.305z"
+                                            />
+                                        </g>
+                                    </svg>
+                                    <span>Задати питання</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="index.html" class="sidebar-menu_logout">
+                        <div>
+                            <svg
+                                class="logout-icon"
+                                version="1.1"
+                                id="Capa_1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="0px"
+                                y="0px"
+                                viewBox="0 0 512 512"
+                                style="enable-background: new 0 0 512 512;"
+                                xml:space="preserve"
+                            >
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M255.15,468.625H63.787c-11.737,0-21.262-9.526-21.262-21.262V64.638c0-11.737,9.526-21.262,21.262-21.262H255.15
+			c11.758,0,21.262-9.504,21.262-21.262S266.908,0.85,255.15,0.85H63.787C28.619,0.85,0,29.47,0,64.638v382.724
+			c0,35.168,28.619,63.787,63.787,63.787H255.15c11.758,0,21.262-9.504,21.262-21.262
+			C276.412,478.129,266.908,468.625,255.15,468.625z"
+                                        />
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M505.664,240.861L376.388,113.286c-8.335-8.25-21.815-8.143-30.065,0.213s-8.165,21.815,0.213,30.065l92.385,91.173
+			H191.362c-11.758,0-21.262,9.504-21.262,21.262c0,11.758,9.504,21.263,21.262,21.263h247.559l-92.385,91.173
+			c-8.377,8.25-8.441,21.709-0.213,30.065c4.167,4.21,9.653,6.336,15.139,6.336c5.401,0,10.801-2.041,14.926-6.124l129.276-127.575
+			c4.04-3.997,6.336-9.441,6.336-15.139C512,250.302,509.725,244.88,505.664,240.861z"
+                                        />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Вийти</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-content">
+                    <div class="content-top">
+                        <form class="form-search">
+                            <input type="text" placeholder="Пошук" />
+                            <button type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                    <path
+                                        d="M17.704 16.285l-3.399-3.39c1.097-1.396 1.692-3.121 1.69-4.898C15.995 3.581 12.415 0 7.997 0 3.581 0 0 3.58 0 7.997s3.58 7.998 7.997 7.998c1.777.002 3.502-.593 4.899-1.69l3.389 3.4c.187.189.443.295.71.295.266 0 .522-.106.71-.296.189-.187.295-.443.295-.71 0-.266-.106-.522-.296-.71zM2 7.997C2 4.685 4.685 2 7.997 2c3.313 0 5.998 2.686 5.998 5.998 0 3.313-2.685 5.998-5.998 5.998C4.685 13.995 2 11.31 2 7.997z"
+                                    />
+                                </svg>
+                            </button>
+                        </form>
+                        <div class="button-container-2">
+                            <span class="mas">+ Додати клієнта</span>
+                            <button type="button" name="Hover">+ Додати клієнта</button>
+                        </div>
+                    </div>
+                    <div class="content-list">
+                        <div class="clients-list_section">
+                            <div class="client-top">
+                                <div class="position">
+                                    <span>№</span>
+                                </div>
+                                <div class="name">
+                                    <span>ПІБ</span>
+                                </div>
+                                <div class="reg-date">
+                                    <span>Дата додавання</span>
+                                </div>
+                                <div class="status">
+                                    <span>Статус</span>
+                                </div>
+                                <div class="duration">
+                                    <span>Термін лікування</span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="client">
+                                    <div data-pos="1">1</div>
+                                    <div data-name="Chioke Okonkwo">Chioke Okonkwo</div>
+                                    <div data-reg="10.10.2020">10.10.2020</div>
+                                    <div data-status="2">Обробляється</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="2">2</div>
+                                    <div data-name="Chioke Okonkwo">Christian Russell</div>
+                                    <div data-reg="10.10.2020">10.10.2020</div>
+                                    <div data-status="2">Обробляється</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="3">3</div>
+                                    <div data-name="Chongrak Narkhirunkanok">Chongrak Narkhirunkanok</div>
+                                    <div data-reg="10.10.2020">10.10.2020</div>
+                                    <div data-status="2">Обробляється</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="4">4</div>
+                                    <div data-name="Chioke Okonkwo">Emlen Beavero</div>
+                                    <div data-reg="10.10.2020">10.10.2020</div>
+                                    <div data-status="2">Обробляється</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="5">5</div>
+                                    <div data-name="Chioke Okonkwo">Francisco Franco</div>
+                                    <div data-reg="10.10.2020">10.10.2020</div>
+                                    <div data-status="2">Обробляється</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="6">6</div>
+                                    <div data-name="Izabella Tabakova">Izabella Tabakova</div>
+                                    <div data-reg="10.10.2020">10.10.2020</div>
+                                    <div data-status="2">Обробляється</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="7">7</div>
+                                    <div data-name="Kun Chang-Min Tabakova">Kun Chang-Min Tabakova</div>
+                                    <div data-reg="10.10.2020">10.10.2020</div>
+                                    <div data-status="2">Обробляється</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="8">8</div>
+                                    <div data-name="Izabella Tabakova">Izabella Tabakova</div>
+                                    <div data-reg="10.10.2020">10.10.2020</div>
+                                    <div data-status="2">Обробляється</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="8">8</div>
+                                    <div data-name="Izabella Tabakova">Izabella Tabakova</div>
+                                    <div data-reg="10.10.2020">10.07.2020</div>
+                                    <div data-status="0">Помилка</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="9">9</div>
+                                    <div data-name="Kun Chang-Min Tabakova">Kun Chang-Min Tabakova</div>
+                                    <div data-reg="10.10.2020">10.10.2020</div>
+                                    <div data-status="1">Оброблено</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="10">10</div>
+                                    <div data-name="Martín Abasto">Martín Abasto</div>
+                                    <div data-reg="10.10.2020">10.10.2020</div>
+                                    <div data-status="2">Обробляється</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="client">
+                                    <div data-pos="11">11</div>
+                                    <div data-name="Izabella Tabakova">Foroogh Abdi</div>
+                                    <div data-reg="10.10.2020">10.07.2020</div>
+                                    <div data-status="0">Обробляється</div>
+                                    <div data-duration data-duration-from="1.06.20" data-duration-to="1.07.20">1.06.20 - 1.07.20</div>
+                                    <div class="client-control">
+                                        <button class="check">Переглянути</button>
+                                        <button class="pref">
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-pagination">
+                        <div class="prev dif-page" data-page="prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                                <defs>
+                                    <filter id="prefix__a">
+                                        <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.000000 0 0 0 0 0.000000 0 0 0 0 0.000000 0 0 0 1.000000 0" />
+                                    </filter>
+                                    <path
+                                        id="prefix__b"
+                                        d="M12 16c-.234 0-.46-.08-.64-.23l-6-5c-.425-.353-.483-.985-.13-1.41.353-.425.985-.483 1.41-.13L12 13.71l5.36-4.32c.207-.168.472-.246.736-.218.265.028.507.16.674.368.185.208.275.483.249.76-.027.278-.168.531-.389.7l-6 4.83c-.185.126-.407.185-.63.17z"
+                                    />
+                                </defs>
+                                <g fill="none" fill-rule="evenodd" filter="url(#prefix__a)" transform="translate(-712 -903)">
+                                    <g transform="rotate(90 -83.5 819.5)">
+                                        <use fill="#FF8663" fill-rule="nonzero" xlink:href="#prefix__b" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div data-page="1" class="current-page dif-page">1</div>
+                        <div data-page="2" class="dif-page">2</div>
+                        <div data-all>...</div>
+                        <div data-page="11" class="dif-page">11</div>
+                        <div data-page="12" class="dif-page">12</div>
+                        <div class="next dif-page" data-page="next">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                                <defs>
+                                    <filter id="prefix__a">
+                                        <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.000000 0 0 0 0 0.000000 0 0 0 0 0.000000 0 0 0 1.000000 0" />
+                                    </filter>
+                                    <path
+                                        id="prefix__b"
+                                        d="M12 16c-.234 0-.46-.08-.64-.23l-6-5c-.425-.353-.483-.985-.13-1.41.353-.425.985-.483 1.41-.13L12 13.71l5.36-4.32c.207-.168.472-.246.736-.218.265.028.507.16.674.368.185.208.275.483.249.76-.027.278-.168.531-.389.7l-6 4.83c-.185.126-.407.185-.63.17z"
+                                    />
+                                </defs>
+                                <g fill="none" fill-rule="evenodd" filter="url(#prefix__a)" transform="translate(-936 -903)">
+                                    <g transform="matrix(0 1 1 0 936 903)">
+                                        <use fill="#FF8663" fill-rule="nonzero" xlink:href="#prefix__b" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-client-popup">
+                <div class="client-popup_backdrop"></div>
+                <div class="client-popup_content">
+                    <button class="close-popup"></button>
+                <div class="steps">
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+                <h3>Додати клієнта</h3>
+                <form class="client-images">
+                    <span>Додайте фото зубів пацієнта</span>
+                    <input type="file" name="fullLeft" id="fullLeft" data-teeth />
+                    <input type="file" name="fullFront" id="fullFront" data-teeth />
+                    <input type="file" name="fullRight" id="fullRight" data-teeth />
+                    <input type="file" name="teethTop" id="teethTop" data-teeth />
+                    <input type="file" name="teethBottom" id="teethBottom" data-teeth />
+                    <span>Додайте фото пацієнта</span>
+                    <input type="file" name="patientPhoto1" id="patientPhoto1" data-patient-photo />
+                    <input type="file" name="patientPhoto2" id="patientPhoto2" data-patient-photo />
+                    <input type="file" name="patientPhoto3" id="patientPhoto3" data-patient-photo />
+                    <input type="file" name="patientPhoto4" id="patientPhoto4" data-patient-photo />
+                    <input type="file" name="patientPhoto5" id="patientPhoto5" data-patient-photo />
+                    <span>Додайте результати сканування у форматі .stl</span>
+                    <input type="file" name="stlScan1" id="stlScan1" data-stl />
+                    <input type="file" name="stlScan2" id="stlScan2" data-stl />
+                    <input type="file" name="stlScan3" id="stlScan3" data-stl />
+                    <input type="file" name="stlScan4" id="stlScan4" data-stl />
+                    <input type="file" name="stlScan5" id="stlScan5" data-stl />
+                </form>
+                <button class="back">Назад</button>
+                <button class="next">Далі</button>
                 </div>
             </div>
         </div>
